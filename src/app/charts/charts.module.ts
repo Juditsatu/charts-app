@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { NgChartsModule } from 'ng2-charts';
 
-import { GraphicsRoutingModule } from './graphics-routing.module';
+import { GraphicsRoutingModule } from './charts-routing.module';
 import { BarsComponent } from './pages/bars/bars.component';
 import { BarsDoubleComponent } from './pages/bars-double/bars-double.component';
 import { GraphicBarComponent } from './components/graphic-bar/graphic-bar.component';
