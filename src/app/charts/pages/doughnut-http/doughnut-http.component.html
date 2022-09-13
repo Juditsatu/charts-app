@@ -1,1 +1,21 @@
-<p>doughnut-http works!</p>
+<h1>Sales</h1>
+<hr>
+
+<div class="alert alert-info" 
+     *ngIf="doughnutChartData.datasets[0].data.length === 0; else divChart">
+    Loading Data...
+</div>
+
+<div class="row">
+    <div class="col">
+        <ng-template #divChart>
+            <div style="display: block">
+                <canvas baseChart
+                  [data]="doughnutChartData"
+            
+                  [type]="doughnutChartType">
+                </canvas>
+            </div>
+        </ng-template>
+    </div>
+</div>
