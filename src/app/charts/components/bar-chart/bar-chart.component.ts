@@ -1,24 +1,21 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
 
 import DataLabelsPlugin from 'chartjs-plugin-datalabels';
 import { BaseChartDirective } from 'ng2-charts';
 
 @Component({
-  selector: 'app-bars',
-  templateUrl: './bars.component.html',
+  selector: 'app-bar-chart',
+  templateUrl: './bar-chart.component.html',
   styles: [
   ]
 })
-export class BarsComponent implements OnInit {
+export class BarChartComponent implements OnInit {
 
+  
+  @Input() horizontal: boolean = false;
+  
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
-
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
   public barChartOptions: ChartConfiguration['options'] = {
     responsive: true,
@@ -43,6 +40,17 @@ export class BarsComponent implements OnInit {
   public barChartPlugins = [
     DataLabelsPlugin
   ];
+
+  ngOnInit(): void {
+    if (this.horizontal === true) {
+      //Para invertir las barras y colocarlas horizontalmente necesitamos cambiar el "indexAxis"
+      this.barChartOptions!.indexAxis = 'y';
+
+      //Para que se nos muestren todos los datos horizontalmente también debemos retirar el
+      //"min" que tenemos en el barChartOptions.
+      this.barChartOptions!.scales!['y']!.min = 0;
+    }
+  }
 
   public barChartData: ChartData<'bar'> = {
     labels: [ '2022', '2023', '2024', '2025', '2026', '2027', '2028' ],
@@ -75,5 +83,6 @@ export class BarsComponent implements OnInit {
 
     this.chart?.update();
   }
+  
 
 }

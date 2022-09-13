@@ -3,12 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'charts', 
+    path: 'chart', 
     loadChildren: () => import('./charts/charts.module').then(m => m.GraphicsModule),
   },
   {
     path: '**',
-    redirectTo: 'charts'
+    redirectTo: 'chart'
   }
 ];
 

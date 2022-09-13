@@ -5,8 +5,8 @@ import { NgChartsModule } from 'ng2-charts';
 
 import { GraphicsRoutingModule } from './charts-routing.module';
 import { BarsComponent } from './pages/bars/bars.component';
+import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 import { BarsDoubleComponent } from './pages/bars-double/bars-double.component';
-import { GraphicBarComponent } from './components/graphic-bar/graphic-bar.component';
 import { DoughnutComponent } from './pages/doughnut/doughnut.component';
 import { DoughnutHttpComponent } from './pages/doughnut-http/doughnut-http.component';
 
@@ -17,7 +17,7 @@ import { DoughnutHttpComponent } from './pages/doughnut-http/doughnut-http.compo
     BarsDoubleComponent,
     DoughnutComponent,
     DoughnutHttpComponent,
-    GraphicBarComponent
+    BarChartComponent
   ],
   imports: [
     CommonModule,

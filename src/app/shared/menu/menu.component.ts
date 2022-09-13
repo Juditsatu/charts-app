@@ -19,10 +19,10 @@ interface MenuItem {
 export class MenuComponent {
 
   menu: MenuItem[] = [
-    { route: '/graphics/bars', text: 'Bars' },
-    { route: '/graphics/bars-double', text: 'Double bars' },
-    { route: '/graphics/doughnut', text: 'Doughnut' },
-    { route: '/graphics/doughnut-http', text: 'Doughnut HTTP' },
+    { route: '/chart/bars', text: 'Bars' },
+    { route: '/chart/bars-double', text: 'Double bars' },
+    { route: '/chart/doughnut', text: 'Doughnut' },
+    { route: '/chart/doughnut-http', text: 'Doughnut HTTP' },
   ]
 
 }
