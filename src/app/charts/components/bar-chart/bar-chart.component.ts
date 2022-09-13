@@ -36,6 +36,7 @@ export class BarChartComponent implements OnInit {
       }
     }
   };
+
   public barChartType: ChartType = 'bar';
   public barChartPlugins = [
     DataLabelsPlugin
@@ -52,12 +53,14 @@ export class BarChartComponent implements OnInit {
     }
   }
 
-  public barChartData: ChartData<'bar'> = {
-    labels: [ '2022', '2023', '2024', '2025', '2026', '2027', '2028' ],
+  @Input() public barChartData: ChartData<'bar'> = {
+    labels: [ 
+      // '2022', '2023', '2024', '2025', '2026', '2027', '2028' 
+    ],
     datasets: [
-      { data: [ 65, 59, 80, 81, 56, 55, 40 ], label: 'Series A', backgroundColor: '#FF635E', hoverBackgroundColor: '#FF8C8C' },
-      { data: [ 28, 48, 40, 19, 86, 27, 90 ], label: 'Series B', backgroundColor: '#E85690', hoverBackgroundColor: '#E880B4' },
-      { data: [ 67, 23, 45, 12, 76, 80, 36 ], label: 'Series C', backgroundColor: '#FF6AF0', hoverBackgroundColor: '#FF99FF' },
+      // { data: [ 65, 59, 80, 81, 56, 55, 40 ], label: 'Series A', backgroundColor: '#FF635E', hoverBackgroundColor: '#FF8C8C' },
+      // { data: [ 28, 48, 40, 19, 86, 27, 90 ], label: 'Series B', backgroundColor: '#E85690', hoverBackgroundColor: '#E880B4' },
+      // { data: [ 67, 23, 45, 12, 76, 80, 36 ], label: 'Series C', backgroundColor: '#FF6AF0', hoverBackgroundColor: '#FF99FF' },
     ]
   };
 
